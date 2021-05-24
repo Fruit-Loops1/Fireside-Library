@@ -1,0 +1,50 @@
+/* Headers : 
+font-family: 'Dancing Script', cursive; */
+/* all other font:
+font-family: 'Lato', sans-serif; */
+
+body{
+  background-color: #281d1b;
+  color: lightblue;
+}
+
+header{
+  background-color: #1a4963;
+  border: 5px groove navy;
+  text-align: center;
+  display: flex;
+}
+nav{
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin:auto auto;
+}
+
+li{
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #feea97;
+  border: 2px outset #8e1a1a;
+  list-style: none;
+  vertical-align: middle;
+  font-family: 'Lato', sans-serif; 
+}
+
+h1{
+  margin-left: 0px;
+  font-family: 'Dancing Script', cursive; 
+  font-size: 50px;
+  text-shadow: 3px 3px navy;
+}
+img{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 10px;
+}
