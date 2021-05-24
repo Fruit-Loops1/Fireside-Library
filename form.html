@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fireside Library</title>
+    <link href = "css/style.css"  rel = "stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@100;400&display=swap" rel="stylesheet">  
+  </head>
+  <body>
+    <header>
+      <img src="img/reading-owl-clip-art.png" width = "50px" height = "75px">
+      <h1>Fireside Library</h1>
+    <nav>
+      <ul>
+        <li><a href = "index.html">Home</a></li>
+        <li><a href = "list.html">Book List</a></li>
+        <li><a href = "aboutUs.html">About Us</a></li>
+      </ul>
+    </nav>
+    </header>
+    <section class = "formContainer">
+      <title>Fireside Book Form</title>
+      <form id="book-form">
+        <fieldset>
+          <label> Book Title
+            <input name="title" type="text" required>
+          </label>
+          <label> Author Name
+            <input name="authorName" type="text" required>
+          </label>
+          <label> Review Score
+            <input id="reviewInput" name="reviewScore" type="range" min="1" max="10" step="1" value="5">
+            <output class="reviewOutput" for="reviewInput"></output>
+          </label>
+          <label>Genre</label>
+          <select name="genre">
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="drama">Drama</option>
+            <option value="romance">Romance</option>
+            <option value="non-fiction">Non-fiction</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="other">Other</option>
+          </select>
+        </fieldset>
+      <button type="submit" id="add-book-button">Add Book</button>
+      </form>
+    </section>
+    <script src="js/app.js"></script>
+    <main>
+    </main>
+  </body>
+</html>
