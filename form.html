@@ -13,13 +13,13 @@
     <header>
       <img src="img/reading-owl-clip-art.png" width = "50px" height = "75px">
       <h1>Fireside Library</h1>
-      <nav>
-        <ul>
-          <li><a href = "index.html">Home</a></li>
-          <li><a href = "list.html">Book List</a></li>
-          <li><a href = "aboutUs.html">About Us</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li><a href = "index.html">Home</a></li>
+        <li><a href = "list.html">Book List</a></li>
+        <li><a hef = "aboutUs.html">About Us</a></li>
+      </ul>
+    </nav>
     </header>
     <div class="book"> 
     <section class = "formContainer">
@@ -50,22 +50,26 @@
           <label>Genre</label>
           <select name="genre">
             <option value="sci-fi">Sci-Fi</option>
-            <option value="drama">Drama</option>
             <option value="romance">Romance</option>
             <option value="non-fiction">Non-fiction</option>
             <option value="fantasy">Fantasy</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Poetry">Poetry</option>
             <option value="other">Other</option>
           </select>
-          </div>
+          <label>Book Notes</label>
+          <textarea id = "notes" name = "notes" rows = "4" cols = "20"></textarea>
+        </fieldset>
+      <button type=".submit" id="add-book-button">Add Book</button>
+      </form>
+    </section>
+      <script src="./js/app.js"></script>
         <!-- </fieldset> -->
-        <br />
-      <button type="submit" id="add-book-button">Add Book</button>
       </form>
     </section>
     <section class = "instructions">
       <p>Add a book using the form on the next page:</p>
     </section>
-
     </div>
     <script src="js/app.js"></script>
     <main>
