@@ -3,6 +3,7 @@
   <head>
     <title>Fireside Library</title>
     <link href = "css/style.css"  rel = "stylesheet"/>
+    <!-- <link href="css/form_css.css" rel="stylesheet" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,28 +13,40 @@
     <header>
       <img src="img/reading-owl-clip-art.png" width = "50px" height = "75px">
       <h1>Fireside Library</h1>
-    <nav>
-      <ul>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "list.html">Book List</a></li>
-        <li><a href = "aboutUs.html">About Us</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href = "index.html">Home</a></li>
+          <li><a href = "list.html">Book List</a></li>
+          <li><a href = "aboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
     </header>
+    <div class="book"> 
     <section class = "formContainer">
       <title>Fireside Book Form</title>
       <form id="book-form">
-        <fieldset>
+        <!-- <fieldset> -->
+          <div>
           <label> Book Title
             <input name="title" type="text" required>
           </label>
+          </div>
+          <br />
+
+          <div>
           <label> Author Name
             <input name="authorName" type="text" required>
           </label>
+          </div>
+          <br />
+          <div>
           <label> Review Score
             <input id="reviewInput" name="reviewScore" type="range" min="1" max="10" step="1" value="5">
             <output class="reviewOutput" for="reviewInput"></output>
           </label>
+          </div>
+          <br />
+          <div>
           <label>Genre</label>
           <select name="genre">
             <option value="sci-fi">Sci-Fi</option>
@@ -43,10 +56,17 @@
             <option value="fantasy">Fantasy</option>
             <option value="other">Other</option>
           </select>
-        </fieldset>
+          </div>
+        <!-- </fieldset> -->
+        <br />
       <button type="submit" id="add-book-button">Add Book</button>
       </form>
     </section>
+    <section class = "instructions">
+      <p>Add a book using the form on the next page:</p>
+    </section>
+
+    </div>
     <script src="js/app.js"></script>
     <main>
     </main>

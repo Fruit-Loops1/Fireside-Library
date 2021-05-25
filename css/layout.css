@@ -1,8 +1,7 @@
-main {
+html {
   display: grid;
-  grid-template-columns: 10% 15% 20% 10% 15% 30%;
-  grid-template-rows: 200px 700px 100px;
-  background:#281d1b url("../img/Fireside2.jpg") no-repeat fixed center;
+  grid-template-columns: minmax(0, 1fr) 1fr 1fr;
+  grid-template-rows: 20vh 65vh 15vh;
 }
 
 #A {
