@@ -67,14 +67,14 @@ nav{
   justify-content: space-around;
 }
 
-ul{
+header ul{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin:auto auto;
 }
 
-li{
+header li{
   padding: 10px;
   margin-right: 1.5vw;
   background-color: #feea97;
@@ -101,4 +101,34 @@ img{
 
 fieldset {
   border: none;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  margin: 0 20rem;
+  border: none;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #996633;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+
+.book-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid whitesmoke 2px;
+  width: 300px;
+  margin: 1rem;
+}
+
+.book-background ul {
+  list-style-type: none;
+  margin-right: 1.2rem;
 }
