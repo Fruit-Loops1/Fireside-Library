@@ -4,7 +4,7 @@
 // ===================== Global Variables =====================
 Book.library = [];
 const bookFormElem = document.getElementById('book-form');
- 
+const bookContainer = document.querySelector('.book-container');
 
 // ===================== Review Score Slider Functionality ===================== 
 const bookScoreInput = document.getElementById('reviewInput');
@@ -48,11 +48,11 @@ const pullBooksFromStorage = function() {
   let parsedBooks = JSON.parse(stringifiedBooks);
   if (pullBooksFromStorage) {
     for (let b = 0; b < parsedBooks.length; b++) {
-    new Book(parsedBooks[b].title, parsedBooks[b].authorName, parsedBooks[b].reviewScore, parsedBooks[b].genre);
+    addBook(parsedBooks[b].title, parsedBooks[b].authorName, parsedBooks[b].reviewScore, parsedBooks[b].genre);
     }
   }
   else {
-    console.log('test');
+    console.log('Nothing in Storage');
   }
 }
 
@@ -66,12 +66,51 @@ const handleBookSubmit = function(event) {
   const genre = event.target.genre.value;
   addBook(title, authorName, reviewScore, genre);
   console.log('handleBookSubmit');
-
-  // We need to have a render function here. Every time submit is pressed, local storage resets at the moment.
+  Book.library[Book.library.length - 1].renderToBookList();
 }
 
-bookFormElem.addEventListener('submit', handleBookSubmit);
+// ===================== List Creator =====================
+Book.prototype.renderToBookList = function(){
+  const bookBackgroundElem = document.createElement('div');
+  bookBackgroundElem.classList.add('book-background');
+  bookContainer.appendChild(bookBackgroundElem);
 
+  const headerElem = document.createElement('h1');
+  headerElem.textContent =  this.title;
+  bookBackgroundElem.appendChild(headerElem);
+// Where the info is held
+  const infoELem = document.createElement('ul');
+  bookBackgroundElem.appendChild(infoELem);
+// Author Area
+  const authorElem = document.createElement('li');
+  authorElem.textContent = `Author: ${this.authorName}`;
+  infoELem.appendChild(authorElem);
+// Review Area
+  const reviewElem = document.createElement('li');
+  reviewElem.textContent = `Score: ${this.reviewScore}`;
+  infoELem.appendChild(reviewElem);
+// Genre Area
+  const genreElem = document.createElement('li');
+  genreElem.textContent = `Genre: ${this.genre}`;
+  infoELem.appendChild(genreElem);
+
+// Notes Area
+  const notesElem = document.createElement('textarea');
+  
+  notesElem.appendChild(bookBackgroundElem);
+  
+}
+
+
+
+
+
+
+
+// ===================== Calling Functions =====================
+bookFormElem.addEventListener('submit', handleBookSubmit);
 pullBooksFromStorage();
 
-
+for (let a = 0; a < Book.library.length; a++) {
+  Book.library[a].renderToBookList();
+}
