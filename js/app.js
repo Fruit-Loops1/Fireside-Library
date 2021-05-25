@@ -3,8 +3,26 @@
 //
 // ===================== Global Variables =====================
 Book.library = [];
+
 const bookFormElem = document.getElementById('book-form');
-const bookContainer = document.querySelector('.book-container');
+
+const scifiContainer = document.querySelector('.sci-fi-container');
+const romanceContainer = document.querySelector('.romance-container');
+const nonfictionContainer = document.querySelector('.non-fiction-container');
+const fantasyContainer = document.querySelector('.fantasy-container');
+const adventureContainer = document.querySelector('.adventure-container');
+const poetryContainer = document.querySelector('.poetry-container');
+const otherContainer = document.querySelector('.other-container');
+
+let genreArray = [
+  scifiContainer,
+  romanceContainer,
+  nonfictionContainer,
+  fantasyContainer,
+  adventureContainer,
+  poetryContainer,
+  otherContainer,
+];
 
 // ===================== Review Score Slider Functionality ===================== 
 const bookScoreInput = document.getElementById('reviewInput');
@@ -17,17 +35,17 @@ bookScoreInput.addEventListener('input', function() {
 });
 
 
-
 // ===================== Book Constructor =====================
-function Book(title, authorName, reviewScore, genre){
+function Book(title, authorName, reviewScore, genre, notes){
   this.title = title;
   this.authorName = authorName;
   this.reviewScore = reviewScore;
   this.genre = genre;
+  this.notes = notes;
 }
 
-const addBook = function(title, authorName, reviewScore, genre) {
-  let book = new Book(title, authorName, reviewScore, genre);
+const addBook = function(title, authorName, reviewScore, genre, notes) {
+  let book = new Book(title, authorName, reviewScore, genre, notes);
 
   Book.library.push(book);
 
@@ -48,7 +66,7 @@ const pullBooksFromStorage = function() {
   let parsedBooks = JSON.parse(stringifiedBooks);
   if (pullBooksFromStorage) {
     for (let b = 0; b < parsedBooks.length; b++) {
-    addBook(parsedBooks[b].title, parsedBooks[b].authorName, parsedBooks[b].reviewScore, parsedBooks[b].genre);
+    addBook(parsedBooks[b].title, parsedBooks[b].authorName, parsedBooks[b].reviewScore, parsedBooks[b].genre, parsedBooks[b].notes);
     }
   }
   else {
@@ -64,16 +82,25 @@ const handleBookSubmit = function(event) {
   const authorName = event.target.authorName.value;
   const reviewScore = event.target.reviewScore.value;
   const genre = event.target.genre.value;
-  addBook(title, authorName, reviewScore, genre);
-  console.log('handleBookSubmit');
-  Book.library[Book.library.length - 1].renderToBookList();
+  const notes = event.target.notes.value;
+  addBook(title, authorName, reviewScore, genre, notes);
+
+  for(let a = 0; a < genreArray.length; a++){
+    if (Book.library[Book.library.length - 1].genre.value === genreArray[1].value){
+      Book.library[Book.library.length - 1].renderToBookList(genreArray.indexOf(a));
+      console.log('Adding book to ', genreArray[a]);
+    }
+    else {
+      alert('this is bad');
+    }
+  }
 }
 
 // ===================== List Creator =====================
 Book.prototype.renderToBookList = function(){
   const bookBackgroundElem = document.createElement('div');
   bookBackgroundElem.classList.add('book-background');
-  bookContainer.appendChild(bookBackgroundElem);
+  scifiContainer.appendChild(bookBackgroundElem);
 
   const headerElem = document.createElement('h1');
   headerElem.textContent =  this.title;
@@ -94,17 +121,10 @@ Book.prototype.renderToBookList = function(){
   genreElem.textContent = `Genre: ${this.genre}`;
   infoELem.appendChild(genreElem);
 
-// Notes Area
-  const notesElem = document.createElement('textarea');
-  
-  notesElem.appendChild(bookBackgroundElem);
-  
+  const noteElem = document.createElement('p');
+  noteElem.textContent = `My Notes: ${this.notes}`;
+  bookBackgroundElem.appendChild(noteElem);
 }
-
-
-
-
-
 
 
 // ===================== Calling Functions =====================
