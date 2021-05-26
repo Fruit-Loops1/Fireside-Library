@@ -4,7 +4,7 @@ html {
   grid-template-rows: 20vh 65vh 15vh;
 }
 
-#A {
+/* #A {
 border: black 3px solid;
 grid-column: 2/4;
 grid-row: 1/2;
@@ -38,4 +38,4 @@ grid-row: 1/2;
   border: black 3px solid;
   grid-column: 4/5;
   grid-row: 3/4;
-}
+} */
