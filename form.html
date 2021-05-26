@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Fireside Library</title>
-    <link href = "css/style.css"  rel = "stylesheet"/>
-    <!-- <link href="css/form_css.css" rel="stylesheet" /> -->
+    <link href = "css/reset.css"  rel = "stylesheet"/>
+    <link href = "css/form.css"  rel = "stylesheet"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@100;400&display=swap" rel="stylesheet">  
@@ -12,13 +12,13 @@
     <header>
       <img src="img/reading-owl-clip-art.png" width = "50px" height = "75px">
       <h1>Fireside Library</h1>
-    <nav>
-      <ul>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "list.html">Book List</a></li>
-        <li><a href = "aboutUs.html">About Us</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href = "index.html">Home</a></li>
+          <li><a href = "list.html">Book List</a></li>
+          <li><a href = "aboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
     </header>
     <div class="book"> 
     <section class = "formContainer">
@@ -29,7 +29,8 @@
               <input name="title" type="text" required>
             </label>
           </div>
-          <br />
+          <br/>
+          <br/>
           <div>
             <label> Author Name
               <input name="authorName" type="text" required>
@@ -42,7 +43,7 @@
               <output class="reviewOutput" for="reviewInput"></output>
             </label>
           </div>
-          <br />
+          <br/>
           <div>
           <label>Genre</label>
           <select name="genre">
@@ -54,6 +55,9 @@
             <option value="Poetry">Poetry</option>
             <option value="Other">Other</option>
           </select>
+          </div>
+          <br/>
+          <br/>
           <label>Book Notes</label>
           <textarea id = "notes" name = "notes" rows = "4" cols = "20"></textarea>
         <button type=".submit" id="add-book-button">Add Book</button>

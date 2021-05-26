@@ -48,6 +48,10 @@ body{
   grid-template-rows: 12vh 70vh 10vh;
 }
 
+main {
+  width: 100% !important;
+}
+
 header{
   background-color: #1a4963;
   color: lightblue;
@@ -97,8 +101,8 @@ img{
   margin-top: 1em;
   margin-left: 2em;
   margin-right: 1em;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  /* height: auto; */
 }
 
 fieldset{
