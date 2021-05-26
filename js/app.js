@@ -9,13 +9,13 @@ const bookFormElem = document.getElementById('book-form');
 // generate list button
 const generateListButton = document.getElementById('load-book-list');
 
-const scifiContainer = document.querySelector('.sci-fi-container');
-const romanceContainer = document.querySelector('.romance-container');
-const nonfictionContainer = document.querySelector('.non-fiction-container');
-const fantasyContainer = document.querySelector('.fantasy-container');
-const adventureContainer = document.querySelector('.adventure-container');
-const poetryContainer = document.querySelector('.poetry-container');
-const otherContainer = document.querySelector('.other-container');
+const scifiContainer = document.getElementById('Sci-fi')
+const romanceContainer = document.getElementById('Romance');
+const nonfictionContainer = document.getElementById('Non-fiction');
+const fantasyContainer = document.getElementById('Fantasy');
+const adventureContainer = document.getElementById('Adventure');
+const poetryContainer = document.getElementById('Poetry');
+const otherContainer = document.getElementById('Other');
 
 let genreArray = [
   scifiContainer,
