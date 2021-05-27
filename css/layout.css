@@ -1,5 +1,0 @@
-html {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 1fr 1fr;
-  grid-template-rows: 20vh 65vh 15vh;
-}

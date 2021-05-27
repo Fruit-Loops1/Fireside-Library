@@ -4,10 +4,13 @@ body{
 }
 
 header{
-    background-color: #1A4963;
+    background-color: #1a4963;
     color: lightblue;
     border: 5px groove navy;
     justify-content: center;
+    display: flex;
+    margin-left: 7vw;
+    margin-right: 7vw;
 }
 
 nav{
@@ -33,14 +36,28 @@ header li{
     vertical-align: middle;
     font-family: 'Lato', sans-serif;
 }
+h3{
+    margin-left: 1em;
+    margin-right: 1.5em;
+    font-family: 'Dancing Script', cursive; 
+    padding-top: 20px;
+    font-size: 3.2em;
+    text-shadow: 3px 3px navy;
+}
 
+img{
+    margin-bottom: .7em;
+    margin-bottom: .8em;
+    width: 80px;
+    height: 80px;
+}
 .book-container {
     border-color: red solid 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-   width: 100%;
+    width: 100%;
     height: 450px;
 }
 
@@ -75,11 +92,11 @@ article{
 }
 
 .book-background ul {
-  margin: 0.5rem;
+    margin: 0.5rem;
 }
 
 .book-background p {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 h2{
@@ -89,3 +106,16 @@ h2{
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
     font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:#8E1A1A;
+    border-radius: 10px;
+}

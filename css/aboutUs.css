@@ -9,26 +9,24 @@ header{
     border: 5px groove navy;
     justify-content: center;
     display: flex;
-    grid-column: 1/3;
-    grid-row: 1/2;
     margin-left: 7vw;
     margin-right: 7vw;
 }
-  
+
 nav{
     padding-top: 0.8em;
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
-  
+
 header ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin:auto auto;
 }
-  
+
 header li{
     padding: 10px;
     margin-right: 1.5vw;
@@ -42,12 +40,18 @@ header li{
 h1{
     margin-left: 1em;
     margin-right: 1.5em;
+    padding-top: .5em;
     font-family: 'Dancing Script', cursive; 
     font-size: 3.2em;
     text-shadow: 3px 3px navy;
 }
-  
-img{
+#headerImg{
+    margin-top: 0.7em;
+    margin-bottom: .8em;
+    width: 80px;
+    height: 80px;
+}
+.img{
     margin-top: 1em;
     margin-left: 2em;
     margin-right: 1em;
@@ -60,7 +64,6 @@ main {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 70vh 70vh 10vh;
     margin: 0 4rem;
-
 }
 
 .jona {
@@ -81,8 +84,8 @@ main {
     margin-left: 80px;
     margin-top: 80px;
     float: center;
-  }
-  
+}
+
 .overlay {
     position: absolute;
     border-radius: 60px;
