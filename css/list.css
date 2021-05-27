@@ -7,27 +7,19 @@ body{
 }
 
 header{
-    display: flex;
-    background-color: #1A4963;
+  background-color: #1a4963;
     color: lightblue;
     border: 5px groove navy;
-    justify-content: space-evenly;
-    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-left: 7vw;
+    margin-right: 7vw;
 }
 
 header h1 {
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     font-size: 3rem;
-}
-
-h2 {
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold;
-    font-size: 2rem;
 }
 
 nav{
@@ -52,6 +44,14 @@ header li{
     list-style: none;
     vertical-align: middle;
     font-family: 'Lato', sans-serif;
+}
+h3{
+    margin-left: 1em;
+    margin-right: 1.5em;
+    font-family: 'Dancing Script', cursive; 
+    padding-top: 20px;
+    font-size: 3.2em;
+    text-shadow: 3px 3px navy;
 }
 
 .selected-note-container{
@@ -79,17 +79,25 @@ header li{
   padding: 1rem;
 }
 
+img{
+    margin-bottom: .7em;
+    margin-bottom: .8em;
+    width: 80px;
+    height: 80px;
+}
+
 .book-container {
     border-color: red solid 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 100%;
     height: 450px;
     margin: auto 10rem;
 }
 
-article{
+article {
     padding: 20px;
     width: 400px;
     height: 500px;
@@ -109,7 +117,7 @@ article{
     color: lightblue;
 }
 
-.book-background{
+.book-background {
     margin: 10px;
     padding: 15px;
     background-image: url("../img/15171-illustration-of-a-spiral-notebook-pv.png");
@@ -126,11 +134,11 @@ article{
 }
 
 .book-background ul {
-  margin: 0.5rem;
+    margin: 0.5rem;
 }
 
 .book-background p {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .notes-container {
@@ -145,4 +153,23 @@ article{
     border-radius: 5px;
 }
 
+h2 {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    font-weight: bold;
+}
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:#8E1A1A;
+    border-radius: 10px;
+}
