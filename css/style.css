@@ -116,6 +116,7 @@ fieldset{
 .book-container h1 {
   color: white;
   font-size: 25px;
+  
 }
 
 .book-background {
@@ -130,10 +131,7 @@ fieldset{
   background-size: 300px 250px;
   transition: transform .2s;
   color: lightgray;
-}
-
-.book-background p {
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .book-background ul {

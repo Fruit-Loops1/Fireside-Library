@@ -34,6 +34,12 @@ header li{
     font-family: 'Lato', sans-serif;
 }
 
+.selected-note-container{
+    height: 100px;
+    width: 100px;
+    border: red solid 2px;
+}
+
 .book-container {
     border-color: red solid 10px;
     display: flex;
@@ -42,6 +48,7 @@ header li{
     justify-content: space-evenly;
    width: 100%;
     height: 450px;
+    margin-top: 10rem;
 }
 
 article{
@@ -72,6 +79,11 @@ article{
     width:100px;
     height: 145px;
     font-family: 'Lato', serif;
+    transition: transform .2s;
+}
+
+.book-background:hover {
+    transform: scale(1.1);
 }
 
 .book-background ul {
@@ -82,6 +94,17 @@ article{
   overflow: hidden;
 }
 
+.notes-container {
+    height: 30px;
+    overflow: hidden;
+}
+
+.notes-container:hover {
+    cursor: pointer;
+    background-color: #3a4a61;
+    opacity: 75%;
+}
+
 h2{
     padding-top: 10px;
     padding-left: 20px;
@@ -89,3 +112,5 @@ h2{
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
     font-weight: bold;
+}
+

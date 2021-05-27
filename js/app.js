@@ -124,10 +124,18 @@ const handleBookDelete = function(event) {
   genreElem.textContent = `Genre: ${this.genre}`;
   infoELem.appendChild(genreElem);
 
+  const pDivElem = document.createElement('div');
+  pDivElem.classList.add('notes-container');
+  bookBackgroundElem.appendChild(pDivElem);
+
   const noteElem = document.createElement('p');
   noteElem.textContent = `My Notes: ${this.notes}`;
-  bookBackgroundElem.appendChild(noteElem);
+  pDivElem.appendChild(noteElem);
 }
+
+
+
+
 Book.prototype.renderToBookList = test;
 
 
