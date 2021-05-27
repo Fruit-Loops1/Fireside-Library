@@ -95,7 +95,7 @@ const handleBookSubmit = function(event) {
 }
 
   const handleNoteClick = function(event) {
-    event.target.parentNode
+    event.target.parentNode.parentNode
     selectedNote.textContent = event.target.textContent;
     console.log('item clicked');
 }
