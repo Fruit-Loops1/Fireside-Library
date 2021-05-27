@@ -1,46 +1,50 @@
 body{
-    background-color: #281d1b;
+    background-color: #281D1B;
     color: black;
 }
+
 header{
-    background-color: #1a4963;
+    background-color: #1A4963;
     color: lightblue;
     border: 5px groove navy;
     justify-content: center;
 }
+
 nav{
     padding-top: 0.8em;
     text-align: center;
     display: flex;
     justify-content: space-around;
-} 
+}
+
 header ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin:auto auto;
 }
+
 header li{
     padding: 10px;
     margin-right: 1.5vw;
-    background-color: #feea97;
-    border: 2px outset #8e1a1a;
+    background-color: #FEEA97;
+    border: 2px outset #8E1A1A;
     list-style: none;
     vertical-align: middle;
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Lato', sans-serif;
 }
+
 .book-container {
     border-color: red solid 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 100%;
+   width: 100%;
     height: 450px;
-
 }
+
 article{
-    border: salmon solid 2px;
     padding: 20px;
     width: 400px;
     height: 500px;
@@ -48,24 +52,36 @@ article{
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
 #Sci-fi, #Romance, #Non-fiction, #Fantasy, #Adventure, #Poetry, #Other {
-    border: solid greenyellow 2px;
     width: 390px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;
+    justify-content: center;
+    color: lightblue;
 }
+
 .book-background{
-    border: skyblue 2px solid;
     margin: 10px;
     padding: 15px;
     background-image: url("../img/15171-illustration-of-a-spiral-notebook-pv.png");
     background-repeat: no-repeat;
     background-size: 100%;
     width:100px;
-    height: 130px;
+    height: 145px;
+    font-family: 'Lato', serif;
 }
+
+.book-background ul {
+  margin: 0.5rem;
+}
+
+.book-background p {
+  overflow: hidden;
+}
+
 h2{
     padding-top: 10px;
     padding-left: 20px;
@@ -73,4 +89,3 @@ h2{
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
     font-weight: bold;
-}
