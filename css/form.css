@@ -14,21 +14,21 @@ header{
     margin-left: 7vw;
     margin-right: 7vw;
 }
-  
+
 nav{
     padding-top: 0.8em;
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
-  
+
 header ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin:auto auto;
 }
-  
+
 header li{
     padding: 10px;
     margin-right: 1.5vw;
@@ -46,7 +46,7 @@ h1{
     font-size: 3.2em;
     text-shadow: 3px 3px navy;
 }
-  
+
 img{
     margin-top: 1em;
     margin-left: 2em;
@@ -66,8 +66,8 @@ img{
     grid-row: 2/4;
     grid-template-columns: repeat(4, 25vw);
     grid-template-rows: 15vh 70vh 10vh;
-  }
-  
+}
+
 .formContainer {
     font-family: 'Dancing Script', cursive;
     font-size: 1.2em;
@@ -79,7 +79,7 @@ img{
     padding-left: 6em;
     padding-top: 4em;
 }
-  
+
 .instructions {
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
@@ -89,7 +89,7 @@ img{
     grid-column: 2/3;
     grid-row: 2/3;
 }
-  
+
 .book-container {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@ img{
     border-radius: 10px;
     justify-content: space-evenly;
 }
-  
+
 .book-background {
     display: flex;
     flex-direction: column;
@@ -107,9 +107,8 @@ img{
     width: 300px;
     margin: 1rem;
 }
-  
+
 .book-background ul {
     list-style-type: none;
     margin-right: 1.2rem;
 }
-  
