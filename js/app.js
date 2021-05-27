@@ -6,8 +6,7 @@ Book.library = [];
 
 const bookFormElem = document.getElementById('book-form');
 
-// generate list button
-const generateListButton = document.getElementById('load-book-list');
+const selectedNote = document.getElementById('selected-note');
 
 const scifiContainer = document.getElementById('Sci-fi')
 const romanceContainer = document.getElementById('Romance');
@@ -92,16 +91,19 @@ const handleBookSubmit = function(event) {
 
   addBook(title, authorName, reviewScore, genre, notes);
   event.target.reset();
+  alert(title + ' added to book list, happy reading!');
 }
 
-const handleBookDelete = function(event) {
-  
+  const handleNoteClick = function(event) {
+    event.target.parentNode
+    selectedNote.textContent = event.target.textContent;
+    console.log('item clicked');
 }
+  
 
 // ===================== List Creator =====================
   function test(container) {
   let bookBackgroundElem = document.createElement('div');
-  console.log(container);
   bookBackgroundElem.classList.add('book-background');
   container.appendChild(bookBackgroundElem);
 
@@ -129,12 +131,11 @@ const handleBookDelete = function(event) {
   bookBackgroundElem.appendChild(pDivElem);
 
   const noteElem = document.createElement('p');
-  noteElem.textContent = `My Notes: ${this.notes}`;
+  noteElem.textContent = `Notes: ${this.notes}`;
+  noteElem.id = (Math.random() * 10).toString();
   pDivElem.appendChild(noteElem);
+  noteElem.addEventListener('click', handleNoteClick);
 }
-
-
-
 
 Book.prototype.renderToBookList = test;
 
@@ -143,16 +144,9 @@ Book.prototype.renderToBookList = test;
 const generateList = function() {
   for(let a = 0; a < Book.library.length; a++) {
     for(let b = 0; b < genreArray.length; b++) {
-      console.log(Book.library[a].genre);
-      console.log(genreArray[b].id);
       if (Book.library[a].genre === genreArray[b].id){
-        console.log('found correct genre in genreArray', genreArray[b]);
         Book.library[a].renderToBookList(genreArray[b]);
-        console.log('Adding book to ', genreArray[a]);
         break;
-      }
-      else {
-        console.log('genre not found')
       }
     }
   }
@@ -161,6 +155,7 @@ const generateList = function() {
 if (bookFormElem !== null) {
   bookFormElem.addEventListener('submit', handleBookSubmit);
 }
+
 
 pullBooksFromStorage();
 
