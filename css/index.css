@@ -1,0 +1,12 @@
+main{
+  margin-left: 150px;
+  display: flex;
+  justify-content: center;
+  width: 1600px;
+  max-height: 950px;
+  background-color: #281D1B;
+  background-size: 100%;
+}
+body{
+  background-color: #281D1B;
+}

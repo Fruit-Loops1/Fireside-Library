@@ -59,6 +59,8 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 70vh 70vh 10vh;
+    margin: 0 4rem;
+
 }
 
 .jona {
@@ -93,7 +95,6 @@ main {
     opacity: 0;
     transition: .5s ease;
     background-color: #c1e1ec;
-
 }
 
 .text {

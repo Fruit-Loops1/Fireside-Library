@@ -94,6 +94,10 @@ const handleBookSubmit = function(event) {
   event.target.reset();
 }
 
+const handleBookDelete = function(event) {
+  
+}
+
 // ===================== List Creator =====================
   function test(container) {
   let bookBackgroundElem = document.createElement('div');

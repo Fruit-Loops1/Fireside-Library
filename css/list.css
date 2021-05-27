@@ -1,202 +1,92 @@
 body{
-    background-color: #281d1b;
+    background-color: #281D1B;
     color: black;
 }
 
-main {
-    display: grid;
-    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 70vh 70vh 20vh;
-}
-
-h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.sci-fi-container {
-    grid-column: 1/3;
-    grid-row: 1/2;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.sci-fi-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-.romance-container {
-    grid-column: 3/5;
-    grid-row: 1/2;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.romance-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-.non-fiction-container {
-    grid-column: 5/7;
-    grid-row: 1/2;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.non-fiction-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-.fantasy-container {
-    grid-column: 7/9;
-    grid-row: 1/2;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.fantasy-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-.adventure-container {
-    grid-column: 2/4;
-    grid-row: 2/3;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.adventure-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-.poetry-container {
-    grid-column: 4/6;
-    grid-row: 2/3;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.poetry-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-.other-container {
-    grid-column: 6/8;
-    grid-row: 2/3;
-    padding: 30px 60px 30px 0px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.other-container article {
-    position: absolute;
-    margin-left: 100px;
-    width: 30vh;
-    height: 30vh;
-    overflow-y: scroll;
-    overflow-x: none;
-    overflow-wrap: break-word;
-}
-
-
 header{
-    background-color: #1a4963;
+    background-color: #1A4963;
     color: lightblue;
     border: 5px groove navy;
     justify-content: center;
-    display: flex;
-    grid-column: 1/3;
-    grid-row: 1/2;
-    margin-left: 7vw;
-    margin-right: 7vw;
 }
-  
+
 nav{
     padding-top: 0.8em;
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
-  
-  header ul{
+
+header ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin:auto auto;
-  }
-  
-  header li{
+}
+
+header li{
     padding: 10px;
     margin-right: 1.5vw;
-    background-color: #feea97;
-    border: 2px outset #8e1a1a;
+    background-color: #FEEA97;
+    border: 2px outset #8E1A1A;
     list-style: none;
     vertical-align: middle;
-    font-family: 'Lato', sans-serif; 
-  }
+    font-family: 'Lato', sans-serif;
+}
 
-  h1{
-    margin-left: 1em;
-    margin-right: 1.5em;
-    font-family: 'Dancing Script', cursive; 
-    font-size: 3.2em;
-    text-shadow: 3px 3px navy;
-  }
-  
-  img{
-    margin-top: 1em;
-    margin-left: 2em;
-    margin-right: 1em;
-    max-width: 100%;
-    height: auto;
-  }
+.book-container {
+    border-color: red solid 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   width: 100%;
+    height: 450px;
+}
+
+article{
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    background-image: url("https://freepngimg.com/thumb/scroll/1-2-scroll-png-file.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#Sci-fi, #Romance, #Non-fiction, #Fantasy, #Adventure, #Poetry, #Other {
+    width: 390px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: center;
+    color: lightblue;
+}
+
+.book-background{
+    margin: 10px;
+    padding: 15px;
+    background-image: url("../img/15171-illustration-of-a-spiral-notebook-pv.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width:100px;
+    height: 145px;
+    font-family: 'Lato', serif;
+}
+
+.book-background ul {
+  margin: 0.5rem;
+}
+
+.book-background p {
+  overflow: hidden;
+}
+
+h2{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    font-weight: bold;
+} 
