@@ -95,7 +95,11 @@ const handleBookSubmit = function(event) {
 }
 // Listening for viewing a note.
   const handleNoteClick = function(event) {
+<<<<<<< HEAD
     selectedNote.parentNode.children[0].textContent = `Featured Note: ${event.target.parentNode.parentNode.children[0].textContent}`;
+=======
+    event.target.parentNode.parentNode
+>>>>>>> 5bba80dbd1ee15e31a798e019ac23fe76e44880f
     selectedNote.textContent = event.target.textContent;
     console.log('item clicked');
 }
