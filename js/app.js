@@ -93,9 +93,9 @@ const handleBookSubmit = function(event) {
   event.target.reset();
   alert(title + ' added to book list, happy reading!');
 }
-
+// Listening for viewing a note.
   const handleNoteClick = function(event) {
-    event.target.parentNode
+    selectedNote.parentNode.children[0].textContent = `Featured Note: ${event.target.parentNode.parentNode.children[0].textContent}`;
     selectedNote.textContent = event.target.textContent;
     console.log('item clicked');
 }
