@@ -96,8 +96,6 @@ const handleBookSubmit = function(event) {
 }
 // Removing books from area
 const removeBookClick = function(event) {
-  console.log(event.target.parentNode.children[0]);
-  console.log(Book.library[0].title);
   for (let c = 0; c < Book.library.length; c++) {
     if (event.target.parentNode.children[0].textContent === Book.library[c].title) {
       let newArr = Book.library.filter( book => book.title !== event.target.parentNode.children[0].textContent);
@@ -108,9 +106,6 @@ const removeBookClick = function(event) {
       generateList();
 
       break;
-    }
-    else {
-    console.log(Book.library[c].title, ' did not match.');
     }
   }
 }
