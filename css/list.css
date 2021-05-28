@@ -119,31 +119,49 @@ article {
 
 .book-background {
     margin: 10px;
-    padding: 15px;
+    padding: 13px;
     background-image: url("../img/15171-illustration-of-a-spiral-notebook-pv.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    width:100px;
+    width: 100px;
     height: 145px;
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     transition: transform .2s;
+    font-size: .9rem;
 }
 
 .book-background:hover {
     transform: scale(1.1);
 }
 
+.book-background h1 {
+}
 .book-background ul {
     margin: 0.5rem;
+}
+
+.book-background li {
+  border-bottom: white solid 1px;
 }
 
 .book-background p {
     overflow: hidden;
 }
 
+.book-background h4 {
+    padding-top: 10px;
+    color: red;
+}
+.book-background h4:hover {
+  cursor: pointer;
+  background-color: white;
+  opacity: 80%;
+}
+
 .notes-container {
-    height: 30px;
+    height: 21px;
     overflow: hidden;
+    width: 100px;
 }
 
 .notes-container:hover {
