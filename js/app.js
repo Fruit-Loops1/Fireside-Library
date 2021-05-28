@@ -6,13 +6,15 @@ Book.library = [];
 
 const bookFormElem = document.getElementById('book-form');
 
-const scifiContainer = document.querySelector('.sci-fi-container');
-const romanceContainer = document.querySelector('.romance-container');
-const nonfictionContainer = document.querySelector('.non-fiction-container');
-const fantasyContainer = document.querySelector('.fantasy-container');
-const adventureContainer = document.querySelector('.adventure-container');
-const poetryContainer = document.querySelector('.poetry-container');
-const otherContainer = document.querySelector('.other-container');
+const selectedNote = document.getElementById('selected-note');
+
+const scifiContainer = document.getElementById('Sci-fi')
+const romanceContainer = document.getElementById('Romance');
+const nonfictionContainer = document.getElementById('Non-fiction');
+const fantasyContainer = document.getElementById('Fantasy');
+const adventureContainer = document.getElementById('Adventure');
+const poetryContainer = document.getElementById('Poetry');
+const otherContainer = document.getElementById('Other');
 
 let genreArray = [
   scifiContainer,
@@ -28,12 +30,13 @@ let genreArray = [
 const bookScoreInput = document.getElementById('reviewInput');
 const bookScoreOutput = document.querySelector('.reviewOutput');
 
-bookScoreOutput.textContent = bookScoreInput.value;
-
-bookScoreInput.addEventListener('input', function() {
+if (bookScoreInput !== null || bookScoreOutput !== null) {
   bookScoreOutput.textContent = bookScoreInput.value;
-});
 
+  bookScoreInput.addEventListener('input', function() {
+    bookScoreOutput.textContent = bookScoreInput.value;
+    });
+}
 
 // ===================== Book Constructor =====================
 function Book(title, authorName, reviewScore, genre, notes){
@@ -55,14 +58,11 @@ const addBook = function(title, authorName, reviewScore, genre, notes) {
 // ===================== Local Storage =====================
 const storeBooks = function() {
   let stringifiedBooks = JSON.stringify(Book.library);
-  console.log(stringifiedBooks, 'all of these books were stored.');
   localStorage.setItem('storedBooks', stringifiedBooks);
 } 
 
 const pullBooksFromStorage = function() {
   let stringifiedBooks = localStorage.getItem('storedBooks');
-  console.log('Pulling from storage -', stringifiedBooks);
-  
   let parsedBooks = JSON.parse(stringifiedBooks);
   if (pullBooksFromStorage) {
     for (let b = 0; b < parsedBooks.length; b++) {
@@ -74,7 +74,6 @@ const pullBooksFromStorage = function() {
   }
 }
 
-
 // ===================== Event Listeners =====================
 const handleBookSubmit = function(event) {
   event.preventDefault();
@@ -84,23 +83,38 @@ const handleBookSubmit = function(event) {
   const genre = event.target.genre.value;
   const notes = event.target.notes.value;
   addBook(title, authorName, reviewScore, genre, notes);
+  event.target.reset();
+  alert(title + ' added to book list, happy reading!');
+}
+// Listening for viewing a note.
+  const handleNoteClick = function(event) {
 
-  for(let a = 0; a < genreArray.length; a++){
-    if (Book.library[Book.library.length - 1].genre.value === genreArray[1].value){
-      Book.library[Book.library.length - 1].renderToBookList(genreArray.indexOf(a));
-      console.log('Adding book to ', genreArray[a]);
-    }
-    else {
-      alert('this is bad');
+    selectedNote.parentNode.children[0].textContent = `Featured Note: ${event.target.parentNode.parentNode.children[0].textContent}`;
+
+    selectedNote.textContent = event.target.textContent;
+    console.log('item clicked');
+}
+// Removing books from area
+const removeBookClick = function(event) {
+  for (let c = 0; c < Book.library.length; c++) {
+    if (event.target.parentNode.children[0].textContent === Book.library[c].title) {
+      let newArr = Book.library.filter( book => book.title !== event.target.parentNode.children[0].textContent);
+      Book.library = newArr;
+
+      storeBooks();
+      clearBooks();
+      generateList();
+
+      break;
     }
   }
 }
 
 // ===================== List Creator =====================
-Book.prototype.renderToBookList = function(){
-  const bookBackgroundElem = document.createElement('div');
+  function test(container) {
+  let bookBackgroundElem = document.createElement('div');
   bookBackgroundElem.classList.add('book-background');
-  scifiContainer.appendChild(bookBackgroundElem);
+  container.appendChild(bookBackgroundElem);
 
   const headerElem = document.createElement('h1');
   headerElem.textContent =  this.title;
@@ -121,16 +135,49 @@ Book.prototype.renderToBookList = function(){
   genreElem.textContent = `Genre: ${this.genre}`;
   infoELem.appendChild(genreElem);
 
+  const pDivElem = document.createElement('div');
+  pDivElem.classList.add('notes-container');
+  bookBackgroundElem.appendChild(pDivElem);
+
   const noteElem = document.createElement('p');
-  noteElem.textContent = `My Notes: ${this.notes}`;
-  bookBackgroundElem.appendChild(noteElem);
+  noteElem.textContent = `Notes: ${this.notes}`;
+  noteElem.id = (Math.random() * 10).toString();
+  pDivElem.appendChild(noteElem);
+  noteElem.addEventListener('click', handleNoteClick);
+
+  const deleteElem = document.createElement('h4');
+  deleteElem.textContent = 'Delete Book';
+  bookBackgroundElem.appendChild(deleteElem);
+  deleteElem.setAttribute('id', headerElem.parentNode.id);
+  deleteElem.addEventListener('click', removeBookClick);
 }
 
+Book.prototype.renderToBookList = test;
+
+// ===================== Generating and clearing list =====================
+const generateList = function() {
+  for(let a = 0; a < Book.library.length; a++) {
+    for(let b = 0; b < genreArray.length; b++) {
+      if (Book.library[a].genre === genreArray[b].id){
+        Book.library[a].renderToBookList(genreArray[b]);
+        break;
+      }
+    }
+  }
+}
+
+const clearBooks = function() {
+  for (let genre of genreArray) {
+    genre.innerHTML = '';
+  }
+}
 
 // ===================== Calling Functions =====================
-bookFormElem.addEventListener('submit', handleBookSubmit);
+if (bookFormElem !== null) {
+  bookFormElem.addEventListener('submit', handleBookSubmit);
+}
+
 pullBooksFromStorage();
 
-for (let a = 0; a < Book.library.length; a++) {
-  Book.library[a].renderToBookList();
-}
+generateList();
+

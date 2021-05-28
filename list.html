@@ -2,15 +2,17 @@
 <html>
   <head>
     <title>Fireside Library</title>
-    <link href = "css/style.css"  rel = "stylesheet"/>
+    <link href = "css/reset.css"  rel = "stylesheet"/>
+    <link href = "css/list.css"  rel = "stylesheet"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@100;400&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@100;400&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <img src="img/reading-owl-clip-art.png" width = "50px" height = "75px"> <h1>Fireside Library</h1>
+      <img src="img/reading-owl-clip-art.png"> 
+      <h3>Fireside Library</h3>
     <nav>
       <ul>
         <li><a href = "index.html">Home</a></li>
@@ -18,22 +20,55 @@
         <li><a href = "aboutUs.html">About Us</a></li>
       </ul>
     </nav>
-    </header>
-    <main>
-    <section class ='sci-fi-container' name="sci-fi">
-    </section>
-    <section class ='romance-container' name="romance">
-    </section>
-    <section class ='non-fiction-container' name="non-fiction">
-    </section>
-    <section class ='fantasy-container'>
-    </section>
-    <section class ='adventure-container'>
-    </section>
-    <section class ='poetry-container'>
-    </section>
-    <section class ='other-container'>
-    </section>
-    </main>
+    </header> 
+    <div class = "selected-note-container">
+    <h1 id ="selected-note-title"> </h1>
+      <p id='selected-note'></p>
+    </div>
+    <div class="book-container">
+      <article>
+        <h2>Sci-fi</h2>
+        <section class = 'sci-fi-container' id="Sci-fi">
+          <br/>
+        </section>
+      </article>
+      <article>
+        <h2>Romance</h2>
+        <section class = 'romance-container' id="Romance">
+          <br/>
+        </section>
+      </article>
+      <article>
+        <h2>Non-Fiction </h2>
+        <section class ='non-fiction-container' id="Non-fiction">
+          <br/>
+        </section>
+      </article>
+      <article>
+        <h2>Fantasy</h2>
+        <section class ='fantasy-container' id="Fantasy">
+          <br/>
+        </section>
+      </article>
+      <article>
+        <h2>Adventure</h2>
+        <section class ='adventure-container' id="Adventure">
+          <br/>
+        </section>
+      </article>
+      <article>
+        <h2>Poetry</h2>
+        <section class ='poetry-container' id="Poetry">
+          <br/>
+        </section>
+      </article>
+      <article>
+        <h2>Other</h2>
+        <section class ='other-container' id="Other">
+          <br/>
+        </section>
+      </article>
+    </div>
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -1,0 +1,193 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #281D1B;
+    color: black;
+}
+
+header{
+  background-color: #1a4963;
+    color: lightblue;
+    border: 5px groove navy;
+    justify-content: center;
+    display: flex;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    border-radius: 0 25px;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+nav{
+    padding-top: 0.8em;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+header ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin:auto auto;
+}
+
+header li{
+    padding: 10px;
+    margin-right: 1.5vw;
+    background-color: #FEEA97;
+    border: 2px outset #8E1A1A;
+    list-style: none;
+    vertical-align: middle;
+    font-family: 'Lato', sans-serif;
+}
+h3{
+    margin-left: 1em;
+    margin-right: 1.5em;
+    font-family: 'Dancing Script', cursive; 
+    padding-top: 20px;
+    font-size: 3.2em;
+    text-shadow: 3px 3px navy;
+}
+
+.selected-note-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    margin-top: 5rem;
+    background-color: #1A4963;
+    border: 5px groove navy;
+    border-radius: 0 25px;
+    font-family: 'Lato', serif;
+    color: lightblue;
+}
+
+.selected-note-container p {
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+.selected-note-container h1 {
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+
+img{
+    margin-bottom: .7em;
+    margin-bottom: .8em;
+    width: 80px;
+    height: 80px;
+}
+
+.book-container {
+    border-color: red solid 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 450px;
+    margin: auto 10rem;
+}
+
+article {
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    background-image: url("https://freepngimg.com/thumb/scroll/1-2-scroll-png-file.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#Sci-fi, #Romance, #Non-fiction, #Fantasy, #Adventure, #Poetry, #Other {
+    width: 390px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    color: lightblue;
+}
+
+.book-background {
+    margin: 10px;
+    padding: 13px;
+    background-image: url("../img/15171-illustration-of-a-spiral-notebook-pv.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 145px;
+    font-family: 'Lato', sans-serif;
+    transition: transform .2s;
+    font-size: .9rem;
+}
+
+.book-background:hover {
+    transform: scale(1.1);
+}
+
+.book-background h1 {
+}
+.book-background ul {
+    margin: 0.5rem;
+}
+
+.book-background li {
+  border-bottom: white solid 1px;
+}
+
+.book-background p {
+    overflow: hidden;
+}
+
+.book-background h4 {
+    padding-top: 10px;
+    color: red;
+}
+.book-background h4:hover {
+  cursor: pointer;
+  background-color: white;
+  opacity: 80%;
+}
+
+.notes-container {
+    height: 21px;
+    overflow: hidden;
+    width: 100px;
+}
+
+.notes-container:hover {
+    cursor: pointer;
+    background-color: #3a4a61;
+    opacity: 90%;
+    border-radius: 5px;
+}
+
+h2 {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:#8E1A1A;
+    border-radius: 10px;
+}
