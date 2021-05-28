@@ -26,16 +26,13 @@ let genreArray = [
   otherContainer,
 ];
 
-console.log(genreArray);
 // ===================== Review Score Slider Functionality ===================== 
 const bookScoreInput = document.getElementById('reviewInput');
 const bookScoreOutput = document.querySelector('.reviewOutput');
 
 if (bookScoreInput !== null || bookScoreOutput !== null) {
   bookScoreOutput.textContent = bookScoreInput.value;
-}
 
-if (bookScoreInput !== null || bookScoreOutput !== null) {
   bookScoreInput.addEventListener('input', function() {
     bookScoreOutput.textContent = bookScoreInput.value;
     });
@@ -61,14 +58,11 @@ const addBook = function(title, authorName, reviewScore, genre, notes) {
 // ===================== Local Storage =====================
 const storeBooks = function() {
   let stringifiedBooks = JSON.stringify(Book.library);
-  console.log(stringifiedBooks, 'all of these books were stored.');
   localStorage.setItem('storedBooks', stringifiedBooks);
 } 
 
 const pullBooksFromStorage = function() {
   let stringifiedBooks = localStorage.getItem('storedBooks');
-  console.log('Pulling from storage -', stringifiedBooks);
-  
   let parsedBooks = JSON.parse(stringifiedBooks);
   if (pullBooksFromStorage) {
     for (let b = 0; b < parsedBooks.length; b++) {
@@ -88,7 +82,6 @@ const handleBookSubmit = function(event) {
   const reviewScore = event.target.reviewScore.value;
   const genre = event.target.genre.value;
   const notes = event.target.notes.value;
-
   addBook(title, authorName, reviewScore, genre, notes);
   event.target.reset();
   alert(title + ' added to book list, happy reading!');
@@ -100,6 +93,21 @@ const handleBookSubmit = function(event) {
 
     selectedNote.textContent = event.target.textContent;
     console.log('item clicked');
+}
+// Removing books from area
+const removeBookClick = function(event) {
+  for (let c = 0; c < Book.library.length; c++) {
+    if (event.target.parentNode.children[0].textContent === Book.library[c].title) {
+      let newArr = Book.library.filter( book => book.title !== event.target.parentNode.children[0].textContent);
+      Book.library = newArr;
+
+      storeBooks();
+      clearBooks();
+      generateList();
+
+      break;
+    }
+  }
 }
 
 // ===================== List Creator =====================
@@ -136,12 +144,17 @@ const handleBookSubmit = function(event) {
   noteElem.id = (Math.random() * 10).toString();
   pDivElem.appendChild(noteElem);
   noteElem.addEventListener('click', handleNoteClick);
+
+  const deleteElem = document.createElement('h4');
+  deleteElem.textContent = 'Delete Book';
+  bookBackgroundElem.appendChild(deleteElem);
+  deleteElem.setAttribute('id', headerElem.parentNode.id);
+  deleteElem.addEventListener('click', removeBookClick);
 }
 
 Book.prototype.renderToBookList = test;
 
-
-// Generate List function 
+// ===================== Generating and clearing list =====================
 const generateList = function() {
   for(let a = 0; a < Book.library.length; a++) {
     for(let b = 0; b < genreArray.length; b++) {
@@ -152,15 +165,19 @@ const generateList = function() {
     }
   }
 }
+
+const clearBooks = function() {
+  for (let genre of genreArray) {
+    genre.innerHTML = '';
+  }
+}
+
 // ===================== Calling Functions =====================
 if (bookFormElem !== null) {
   bookFormElem.addEventListener('submit', handleBookSubmit);
 }
 
-
 pullBooksFromStorage();
 
 generateList();
-//TODO: create a div in the p tag to be able to keep the text inside of the book. 
-//TODO: click book to be able to see the full note
-//TODO: delete button
+
